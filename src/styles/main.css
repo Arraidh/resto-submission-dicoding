@@ -43,6 +43,10 @@ a {
   background-color: #000;
 }
 
+.hero-container {
+  width: 100%;
+}
+
 @media screen and (max-width: 900px) {
   .hamburger {
     display: block;
