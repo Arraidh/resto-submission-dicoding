@@ -11,7 +11,16 @@ img {
   display: block;
 }
 
+body {
+  height: 100%;
+}
+
 header {
+  z-index: 1;
+  top: 0;
+  width: 93%;
+  position: fixed;
+  background-color: #fff;
   padding: 1.5rem 5rem;
   display: flex;
   justify-content: space-between;
@@ -22,6 +31,7 @@ header {
 .nav-menu {
   display: flex;
   gap: 5rem;
+  margin-right: 2rem;
 }
 
 .nav-item {
@@ -30,7 +40,8 @@ header {
   font-size: 1.25rem;
 }
 
-a {
+.nav-item a {
+  padding: 2rem;
   text-decoration: none;
   color: #000;
 }
@@ -62,7 +73,116 @@ a {
   }
 }
 
+main {
+  font-family: poppins, sans-serif;
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-top: 5rem;
+    gap: 2rem;
+  }
+
+  .card {
+    flex: 0 1 24%;
+    width: auto;
+    height: 60rem;
+    overflow-y: scroll;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    min-width: 30rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+  }
+
+  .head-card {
+    z-index: 0;
+    position: relative;
+  }
+
+  .body-rating {
+    border-radius: 2rem 2rem 0 0;
+    padding: 0.2rem 2rem;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 35%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .body-city {
+    color: #fff;
+    padding: 0.2rem 2rem;
+    background-color: #14213d;
+    position: absolute;
+    top: 10;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .head-card img {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .head-card .body-rating img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .body-card {
+    padding: 10px 15px;
+  }
+
+  .body-card h1 {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #fca311;
+    margin: 0;
+    text-align: center;
+  }
+
+  .body-card svg {
+    width: 31px;
+    position: absolute;
+    bottom: 7px;
+    right: 20px;
+  }
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 2rem;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  font-family: poppins, sans-serif;
+  color: #fff;
+  display: block;
+  background-color: #14213d;
+}
+
 @media screen and (max-width: 1200px) {
+  main {
+    .card-wrapper {
+      gap: 0.5rem;
+    }
+
+    .card {
+      min-width: 30rem;
+      h1 {
+        font-size: 1.5rem;
+      }
+      height: 40rem;
+    }
+  }
   .hero-container {
     img {
       width: 100%;
@@ -73,6 +193,8 @@ a {
 
 @media screen and (max-width: 900px) {
   .hamburger {
+    background-color: #fff;
+    border: none;
     display: block;
   }
 
@@ -102,6 +224,7 @@ a {
 
   header ul li {
     margin: 16px 0;
+    padding: 1.5rem;
   }
 
   header ul.active {
@@ -110,6 +233,7 @@ a {
   }
 
   header {
+    width: 95%;
     padding: 1rem;
     justify-content: space-between;
   }
@@ -117,4 +241,44 @@ a {
   .nav-menu {
     gap: 1rem;
   }
+
+  .card {
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
 }

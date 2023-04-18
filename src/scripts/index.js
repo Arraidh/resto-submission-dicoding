@@ -1,7 +1,6 @@
 import "regenerator-runtime"; /* for async await transpile */
-import "../../node_modules/@fortawesome/fontawesome-free/js/solid.js";
-import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 import "../styles/main.scss";
+import data from "../DATA.json";
 
 console.log("Hello Coders! :)");
 
@@ -13,4 +12,33 @@ hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
-const heroElement = document.querySelector(".hero-container");
+const restoData = { ...data.restaurants };
+const cardData = { ...restoData };
+
+const cardWrapper = document.getElementById("card-wrapper");
+
+// console.log(cardData);
+// console.log(cardData[1].name);
+
+for (let card = 0; card < Object.keys(cardData).length; card++) {
+  cardWrapper.innerHTML += `<div class="card">
+      <div class="head-card">
+      <p class="body-city">
+      ${cardData[card].city}
+    </p>
+        <img src="${cardData[card].pictureId}" alt="" />
+        <div class="body-rating">
+        <img src="./images/Rating.png" alt="" />
+        <p>
+          ${cardData[card].rating}
+        </p>
+        </div>
+      </div>
+      <div class="body-card">
+        <h1>${cardData[card].name}</h1>
+        <p>
+          ${cardData[card].description}
+        </p>
+      </div>
+    </div>`;
+}

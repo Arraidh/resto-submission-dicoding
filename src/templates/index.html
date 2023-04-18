@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Apps Starter Project</title>
     <link rel="stylesheet" href="../styles/main.css" />
   </head>
   <body>
+    <a href="#maincontent" class="skip-link">Menuju ke konten</a>
     <header>
       <img src="./images/Logo.png" alt="DapurKita" />
       <ul class="nav-menu">
@@ -16,15 +19,20 @@
           <a href="https://github.com/Arraidh">About</a>
         </li>
       </ul>
-      <nav class="hamburger">
+      <button class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-      </nav>
+      </button>
     </header>
-    <main></main>
-    <div class="hero-container">
-      <img src="./images/heros/hero-image_2.jpg" alt="" />
-    </div>
+    <main id="maincontent">
+      <div class="hero-container">
+        <img src="./images/heros/hero-image_2.jpg" alt="" />
+      </div>
+
+      <div class="card-wrapper" id="card-wrapper"></div>
+    </main>
+
+    <footer>Copyright © 2023 - Warung Kita</footer>
   </body>
 </html>
