@@ -4,7 +4,8 @@ $highlightColor: #fca311;
 
 html {
   padding: 0;
-  margin: none;
+  margin: 0;
+  overflow-x: visible;
 }
 
 img {
@@ -12,14 +13,14 @@ img {
 }
 
 body {
-  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 header {
   z-index: 1;
   top: 0;
-  width: 93%;
-  position: fixed;
+  position: sticky;
   background-color: #fff;
   padding: 1.5rem 5rem;
   display: flex;
@@ -189,9 +190,7 @@ footer {
       height: 30rem;
     }
   }
-}
 
-@media screen and (max-width: 900px) {
   .hamburger {
     background-color: #fff;
     border: none;
@@ -233,15 +232,16 @@ footer {
   }
 
   header {
-    width: 95%;
-    padding: 1rem;
+    padding: 2rem;
     justify-content: space-between;
   }
 
   .nav-menu {
     gap: 1rem;
   }
+}
 
+@media screen and (max-width: 900px) {
   .card {
     p {
       font-size: 1rem;
