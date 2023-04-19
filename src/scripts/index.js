@@ -19,23 +19,23 @@ const cardWrapper = document.getElementById("card-wrapper");
 
 for (let card = 0; card < Object.keys(cardData).length; card++) {
   cardWrapper.innerHTML += `<div class="card">
-      <div class="head-card">
-      <p class="body-city">
-      ${cardData[card].city}
+  <div class="head-card">
+  <p class="body-city" tabindex="${card}">
+  ${cardData[card].city}
+</p>
+    <img src="${cardData[card].pictureId}" alt="" tabindex="${card}"/>
+    <div class="body-rating">
+    <img src="./images/Rating.png" alt="Picture of ${cardData[card].name}" />
+    <p tabindex="${card}">
+      ${cardData[card].rating}
     </p>
-        <img src="${cardData[card].pictureId}" alt="" />
-        <div class="body-rating">
-        <img src="./images/Rating.png" alt="" />
-        <p>
-          ${cardData[card].rating}
-        </p>
-        </div>
-      </div>
-      <div class="body-card">
-        <h1>${cardData[card].name}</h1>
-        <p>
-          ${cardData[card].description}
-        </p>
-      </div>
-    </div>`;
+    </div>
+  </div>
+  <div class="body-card">
+    <h1 tabindex="${card + 1}">${cardData[card].name}</h1>
+    <p tabindex="${card}">
+      ${cardData[card].description}
+    </p>
+  </div>
+</div>`;
 }

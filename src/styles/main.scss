@@ -46,6 +46,9 @@ header {
 }
 
 .hamburger {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 1rem;
   display: none;
   cursor: pointer;
 }
