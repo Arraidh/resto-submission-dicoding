@@ -1,4 +1,4 @@
-import "regenerator-runtime"; /* for async await transpile */
+import "regenerator-runtime";
 import "../styles/main.scss";
 import data from "../DATA.json";
 
@@ -16,9 +16,6 @@ const restoData = { ...data.restaurants };
 const cardData = { ...restoData };
 
 const cardWrapper = document.getElementById("card-wrapper");
-
-// console.log(cardData);
-// console.log(cardData[1].name);
 
 for (let card = 0; card < Object.keys(cardData).length; card++) {
   cardWrapper.innerHTML += `<div class="card">
